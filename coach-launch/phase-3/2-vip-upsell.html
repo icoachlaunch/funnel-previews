@@ -1846,6 +1846,48 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
 .vv--party .vv-foot { position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; gap: .45em; font-size: .62em; color: rgba(255,255,255,.85); text-align: center; flex-wrap: wrap; }
 .vv--party .vv-foot__k { font-family: var(--font-display); font-weight: var(--weight-display); color: #fff; letter-spacing: .06em; text-transform: uppercase; }
 .vv--party .vv-foot__dot { opacity: .5; }
+/* VIP Party as a Zoom room: speaker view, attendee strip on top, meeting controls below */
+.vv--zoom .vv__art { background: #1a1a1a; padding: 0; gap: 0; }
+.vv--zoom .vv-bar { padding: .5em .8em .35em; }
+.vv--zoom .vv-bar__t { font-size: .9em; }
+.vv--zoom .vv-strip { position: relative; z-index: 2; display: flex; justify-content: center; gap: .4em; padding: .2em .8em .5em; }
+.vv--zoom .vv-strip .vv-tile { flex: none; width: 5.9em; aspect-ratio: 16 / 9; border-radius: .35em; }
+.vv--zoom .vv-strip .vv-tile__tag { left: .25em; bottom: .25em; font-size: .46em; padding: .15em .45em; }
+.vv--zoom .vv-tile--host { grid-row: auto; flex: 1; min-height: 0; margin: 0 .5em; border-radius: .45em; z-index: 2; }
+.vv--zoom .vv-ctl { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: .4em; padding: .5em .8em .55em; }
+.vv--zoom .vv-ctl__g { display: flex; align-items: flex-start; gap: .15em; }
+.vv--zoom .vv-ctl__b { display: flex; flex-direction: column; align-items: center; gap: .3em; min-width: 5.6em; font-size: .44em; font-weight: 500; line-height: 1; color: rgba(255,255,255,.82); white-space: nowrap; }
+.vv--zoom .vv-ctl__b svg { width: 2.5em; height: 2.5em; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.vv--zoom .vv-ctl__b svg .f { fill: currentColor; stroke: none; }
+.vv--zoom .vv-ctl__b--share { color: #23d959; }
+.vv--zoom .vv-ctl__b--rec svg .f { fill: #ff4d4d; }
+.vv--zoom .vv-ctl__leave { padding: .5em 1.1em; border-radius: .5em; background: #e02828; color: #fff; font-size: .56em; font-weight: 700; line-height: 1; }
+/* Phone view of the same Zoom room, resting on the left of the desktop frame */
+.vv--zoomph { position: relative; box-sizing: border-box; padding: 0 0 18.8% 12.7%; }
+.vv--zoomph .vv-tile--host > .vv-tile__tag { left: 7.6em; }
+.vv--zoomph .vv-ctl { padding-left: 7.4em; }
+.vv--zoomph .vv-zph { position: absolute; left: 0; bottom: 0; width: 36.5cqw; aspect-ratio: 9 / 18.5; z-index: 3; box-sizing: border-box;
+  font-size: calc(100cqw / 30); font-family: var(--font-body); color: #fff; display: flex; flex-direction: column;
+  background: #0b0b0b; border: .28em solid #0b0b0b; border-radius: 1.5em; overflow: hidden;
+  box-shadow: 0 0 0 .07em #4a4a4a, 0 1em 2.2em rgba(0,0,0,.5); }
+.vv--zoomph .vv-zph * { box-sizing: border-box; }
+.vv--zoomph .vv-zph::before { content: ""; position: absolute; left: 50%; top: .28em; width: 2.1em; height: .5em; border-radius: 1em; background: #000; box-shadow: 0 0 0 .04em #2a2a2a; transform: translateX(-50%); z-index: 2; }
+.vv--zoomph .vv-zph__top { display: flex; align-items: center; justify-content: space-between; gap: .4em; padding: 2.6em .9em .7em; font-size: .4em; font-weight: 700; line-height: 1; }
+.vv--zoomph .vv-zph__live { display: inline-flex; align-items: center; gap: .35em; text-transform: uppercase; letter-spacing: .04em; }
+.vv--zoomph .vv-zph__live::before { content: ""; width: .6em; height: .6em; border-radius: 50%; background: #ff4d4d; }
+.vv--zoomph .vv-zph__leave { padding: .35em .7em; border-radius: .5em; background: #e02828; }
+.vv--zoomph .vv-zph__stage { position: relative; flex: 1; min-height: 0; margin: 0 .2em; border-radius: .5em; overflow: hidden; background: #2a2a2a;
+  border: .1em solid var(--pos); box-shadow: 0 0 0 .1em color-mix(in srgb, var(--pos) 55%, transparent); }
+.vv--zoomph .vv-zph__host { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 58% 20%; }
+.vv--zoomph .vv-zph__self { position: absolute; right: .3em; top: .3em; width: 2.2em; aspect-ratio: 3 / 4; border-radius: .3em; overflow: hidden; border: .06em solid rgba(255,255,255,.55); box-shadow: 0 .2em .5em rgba(0,0,0,.4); }
+.vv--zoomph .vv-zph__self img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.vv--zoomph .vv-zph__stage .vv-tile__tag { left: .3em; bottom: .3em; font-size: .42em; }
+.vv--zoomph .vv-zph__ctl { display: flex; justify-content: space-around; padding: .45em .15em .75em; }
+.vv--zoomph .vv-zph__b { display: flex; flex-direction: column; align-items: center; gap: .3em; font-size: .32em; font-weight: 500; line-height: 1; color: rgba(255,255,255,.82); white-space: nowrap; }
+.vv--zoomph .vv-zph__b svg { width: 2.7em; height: 2.7em; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.vv--zoomph .vv-zph__b svg .f { fill: currentColor; stroke: none; }
+.vv--zoomph .vv-zph__b--share { color: #23d959; }
+
 
 /* ── 2 · COACHING IN YOUR POCKET — a phone with the host in a chat ─────────────── */
 /* ── Coaching In Your Pocket — WhatsApp-style thread on a full phone (Matthew's reference, 2026-10-08).
@@ -2676,7 +2718,7 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
 
 
 <div class="v3-warn" data-cfe="01-warning"><b>Important:</b> Do Not Close This Window Or Click The “Back” Button</div>
-<div class="v3-logo"><i>CL</i>Coach Launch</div><div class="v3-prog" aria-label="Your progress"><span class="v3-prog__done">✓ Checkout</span><span class="v3-prog__now">Almost complete…</span><span class="v3-prog__todo">Complete</span></div>
+<div class="v3-logo"><img src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/logo-716ef8.png" alt="Coach Launch" data-cfe-media="logo" style="display: block; height: 36px; width: auto; margin: 0 auto; box-shadow: none; border-radius: 0"></div><div class="v3-prog" aria-label="Your progress"><span class="v3-prog__done">✓ Checkout</span><span class="v3-prog__now">Almost complete…</span><span class="v3-prog__todo">Complete</span></div>
 
 <header class="cl-section cl-hero cl-center cl-vip v3-upsell-hero" data-cfe="02-hero">
   <div class="cl-container cl-container--narrow cl-hero__stack">
@@ -2684,7 +2726,7 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
     
     <p class="v3-access v3-access--one"><b>To Access Your Purchase:</b> Please watch this short message from Matthew right now</p><div class="cl-video cl-hero__media cl-vip__video" data-cfe-media="vip-video"><div class="v3-vc" role="img" aria-label="Video from Matthew White"><div class="v3-vc__txt"><span class="v3-vc__chip">● One more step</span><p class="v3-vc__ttl">Your Order Is<em>Not Yet Complete</em></p><p class="v3-vc__line">Watch this short message from Matthew before the <b>masterclass</b></p><p class="v3-vc__with">with <b>Matthew White &amp; Sarah Tynan</b></p></div><span class="v3-vc__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span><div class="v3-vc__card"><img src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/image-ddf966.webp" alt="" style="object-position: 50% 10%"></div><div class="v3-vc__badge"><b>+</b><span>The next step</span></div></div></div>
     <div class="cl-yesno">
-      <a class="cl-cta" href="#checkout"><span class="cl-cta__main">Upgrade To VIP — Just $97!</span><span class="cl-cta__sub">One click — no card details needed</span></a>
+      <a class="cl-cta" href="#checkout"><span class="cl-cta__main">Upgrade To VIP — Just $297!</span><span class="cl-cta__sub">One click — no card details needed</span></a>
       <a class="cl-decline" href="3b-seat-confirmed.html">No thanks, Matthew. I'll keep my seat and try to build my close on my own. Take me to my confirmation.</a>
     </div>
   </div>
@@ -2701,8 +2743,8 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
       <div>
         <h2 class="cl-h2 cl-vipb__h">You've Already Done the Hardest Part.</h2>
         <div class="cl-body">
-          <p>Most people never get this far, because they stay stuck in research mode… waiting for a perfect moment that never actually comes.</p>
-          <p><strong>But not you.</strong> You're here, you're in and you're ready to do this properly, so let me ask you one simple question…</p>
+          <p style="font-size: 20px">Most people never get this far, because they stay stuck in research mode… waiting for a perfect moment that never actually comes.</p>
+          <p style="font-size: 20px"><strong>But not you.</strong> You're here, you're in and you're ready to do this properly, so let me ask you one simple question…</p>
         </div>
       </div>
     </div>
@@ -2711,10 +2753,10 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
 
 <section class="cl-section cl-center" data-cfe="06-pitch">
   <div class="cl-container cl-container--narrow cl-vippitch">
-    <h2 class="cl-h2 cl-vippitch__h">"What if you didn't just learn the Sniper Close™… what if you walked out the day after with it built into your own presentation, ready to close 3–5 high-ticket clients from your next online event?"</h2>
-    <p class="cl-lede">That's exactly what the <strong>VIP Upgrade</strong> does, and today it's just <strong class="cl-pos">$97</strong> instead of the usual <span class="cl-strike">$497</span>.</p>
-    <p class="cl-body">The masterclass shows you how the Sniper Close™ works… the VIP Upgrade is where we sit down together and build yours, so you're never left trying to piece it together on your own.</p>
-    <div class="cl-cta-stack"><a class="cl-cta" href="#checkout"><span class="cl-cta__main">Upgrade To VIP — Just $97!</span><span class="cl-cta__sub">One click — no card details needed</span></a></div>
+    <h2 class="cl-h2 cl-vippitch__h">"What if you didn't just learn the Sniper Close™… what if you walked out the day after with a crystal clear Game Plan to close your first 3-5 clients in your next online event?"</h2>
+    <p class="cl-body" style="font-size: 24px">The masterclass shows you how the Sniper Close™ works… the VIP Upgrade is where we sit down together build a game plan to fill the room with the right people and never have to worry about attendance again.</p>
+    
+    <div class="cl-cta-stack"><a class="cl-cta" href="#checkout"><span class="cl-cta__main">Upgrade To VIP — Just $297!</span><span class="cl-cta__sub">One click — no card details needed</span></a></div>
   </div>
 </section>
 
@@ -2722,7 +2764,7 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
 <section class="cl-section cl-section--panel" data-cfe="11-vip-plusone">
   <div class="cl-container">
     <div class="cl-vipb">
-      <div class="cl-vipb__img cl-vipb__vis"><div class="vv vv--plusone" data-cfe-media="vip-plusone" aria-label="Bring Your +1 — two VIP Access passes to the VIP Party">
+      <div class="cl-vipb__img cl-vipb__vis"><div class="vv vv--plusone" data-cfe-media="vip-plusone" aria-label="Bring Your +1 — two VIP Access passes to the VIP Party" style="width: 453px; height: 604px">
   <div class="vv__art">
     <div class="vv-pass vv-pass--a"><span class="vv-strap"></span><span class="vv-clip"><i></i></span><div class="vv-card"><span class="vv-slot"></span><span class="vv-tab">VIP Party</span><p class="vv-sys">Sniper Close™</p><p class="vv-type">masterclass</p><p class="vv-vip">VIP</p><p class="vv-acc">Access</p><img class="vv-logo" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/logo-91f59b.png" alt="Coach Launch logo" data-cfe-media="logo" loading="lazy"><div class="vv-valid">Valid for one</div><div class="vv-bar"><i style="width:0.12em"></i><i style="width:0.24em"></i><i style="width:0.12em"></i><i style="width:0.36em"></i><i style="width:0.12em"></i><i style="width:0.12em"></i><i style="width:0.24em"></i><i style="width:0.36em"></i><i style="width:0.12em"></i><i style="width:0.24em"></i><i style="width:0.12em"></i><i style="width:0.12em"></i><i style="width:0.36em"></i><i style="width:0.24em"></i><i style="width:0.12em"></i><i style="width:0.24em"></i><i style="width:0.12em"></i><i style="width:0.36em"></i><i style="width:0.12em"></i><i style="width:0.24em"></i><i style="width:0.12em"></i><i style="width:0.36em"></i><i style="width:0.12em"></i><i style="width:0.24em"></i><i style="width:0.12em"></i><i style="width:0.12em"></i><i style="width:0.36em"></i></div></div></div>
     <div class="vv-pass vv-pass--b"><span class="vv-strap"></span><span class="vv-clip"><i></i></span><div class="vv-card"><span class="vv-slot"></span><span class="vv-tab">VIP Party</span><p class="vv-sys">Sniper Close™</p><p class="vv-type">masterclass</p><p class="vv-vip">VIP</p><p class="vv-acc">Access</p><img class="vv-logo" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/logo-91f59b.png" alt="Coach Launch logo" data-cfe-media="logo" loading="lazy"><div class="vv-valid">Valid for your +1</div><div class="vv-bar"><i style="width:0.12em"></i><i style="width:0.24em"></i><i style="width:0.12em"></i><i style="width:0.36em"></i><i style="width:0.12em"></i><i style="width:0.12em"></i><i style="width:0.24em"></i><i style="width:0.36em"></i><i style="width:0.12em"></i><i style="width:0.24em"></i><i style="width:0.12em"></i><i style="width:0.12em"></i><i style="width:0.36em"></i><i style="width:0.24em"></i><i style="width:0.12em"></i><i style="width:0.24em"></i><i style="width:0.12em"></i><i style="width:0.36em"></i><i style="width:0.12em"></i><i style="width:0.24em"></i><i style="width:0.12em"></i><i style="width:0.36em"></i><i style="width:0.12em"></i><i style="width:0.24em"></i><i style="width:0.12em"></i><i style="width:0.12em"></i><i style="width:0.36em"></i></div></div></div>
@@ -2734,16 +2776,17 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
         <p class="cl-pill">VIP #1</p>
         <h2 class="cl-h2 cl-vipb__h">Bring Your +1</h2>
         <div class="cl-body">
-          <p>Here's the trap: you leave the VIP Party with your close built… then you have to explain it all to the person who'll actually help you run your next event. Something gets lost in translation, and the momentum stalls.</p>
+          <p>Here's the trap: you leave the VIP Party with your roadmap built… then you have to explain it all to the person who'll actually help you run your next event. Something gets lost in translation, and the momentum stalls.</p>
           <p>So bring them with you. Your VIP upgrade includes <strong>a second seat at the VIP Party</strong> for the person who'll help you deliver it: your business partner, your team lead, your assistant.</p>
           <p>They hear it first-hand, they ask their own questions, and they leave knowing exactly what their part is on the day.</p>
           <ul class="cl-list cl-list--tick">
             <li><strong>Same room, same plan:</strong> no second-hand briefings, no "what did Matthew mean by…".</li>
-            <li><strong>Built-in accountability:</strong> someone in your corner making sure the close actually gets built.</li>
-            <li><strong>Twice the hands:</strong> the work gets shared, so your Sniper Close™ is ready before your next event.</li>
+            <li><strong>Built-in accountability:</strong> someone in your corner making sure the roadmap actually gets followed.</li>
+            <li><strong>Twice the hands:</strong> the work gets shared, so your room is filling before your next event.</li>
           </ul>
           <p><strong>Two of you leave with the same plan, so it actually gets done.</strong></p>
         </div>
+        <p class="cl-vipb__anchor" data-cfe-optional="vip-value-1"><strong>Value: $197.</strong> Upgrade today and it's included.</p>
       </div>
     </div>
   </div>
@@ -2752,19 +2795,41 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
 <section class="cl-section" data-cfe="07-vip-party">
   <div class="cl-container">
     <div class="cl-vipb cl-vipb--flip">
-      <div class="cl-vipb__img cl-vipb__vis" style="height: 100%"><img class="cl-vipb__photo" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/vip-party-d95137.jpg" alt="Matthew White hosting the VIP Party live, with VIPs on screen behind him" data-cfe-media="vip-party" style="display: block; width: 100%; height: auto; border-radius: 16px; box-shadow: var(--shadow-md);"></div>
+      <div class="cl-vipb__img cl-vipb__vis" style="height: 100%"><div class="vv vv--party vv--zoom vv--zoomph" data-cfe-media="vip-party" aria-label="The VIP Party — live implementation session with Matthew White">
+  <div class="vv__art">
+    <div class="vv-bar"><span class="vv-pill vv-pill--live">Live</span><span class="vv-bar__t">The VIP Party</span><span class="vv-pill vv-pill--paper">2-hour · the day after</span></div>
+    <div class="vv-strip">
+      <div class="vv-tile"><img class="vv-face ph" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/party-face-1-e51c9f.jpg" alt="VIP" data-cfe-media="party-face-1"><span class="vv-tile__tag">You</span></div>
+      <div class="vv-tile"><img class="vv-face ph" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/party-face-2-7fc338.jpg" alt="VIP" data-cfe-media="party-face-2"><span class="vv-tile__tag">VIP</span></div>
+      <div class="vv-tile"><img class="vv-face ph" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/party-face-3-bcde5b.jpg" alt="VIP" data-cfe-media="party-face-3"><span class="vv-tile__tag">VIP</span></div>
+      <div class="vv-tile"><img class="vv-face ph" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/party-face-4-3ca165.jpg" alt="VIP" data-cfe-media="party-face-4"><span class="vv-tile__tag">VIP</span></div>
+    </div>
+    <div class="vv-tile vv-tile--host">
+        <img class="ph vv-tile__bg" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/host-action-d95137.jpg" alt="Matthew White hosting the VIP Party" data-cfe-media="host-action" style="object-fit: cover; object-position: 50% 20%">
+        <span class="vv-tile__tag"><i class="vv-mic"></i>Matthew · Host</span>
+        <span class="vv-tile__speaking"></span>
+      </div>
+    <div class="vv-ctl" aria-hidden="true"><div class="vv-ctl__g"><span class="vv-ctl__b"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0M12 18v3"></path></svg>Mute</span><span class="vv-ctl__b"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="12" height="10" rx="2"></rect><path d="M15 11l6-3v8l-6-3z"></path></svg>Stop Video</span></div><div class="vv-ctl__g"><span class="vv-ctl__b"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"></path><circle cx="17" cy="9" r="2.4"></circle><path d="M16.5 14.2c2.6.4 4.5 2.6 4.5 5.8"></path></svg>Participants</span><span class="vv-ctl__b"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H10l-5 4v-4H4z"></path></svg>Chat</span><span class="vv-ctl__b vv-ctl__b--share"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"></rect><path d="M12 14V8M9 10.5l3-3 3 3M8 21h8"></path></svg>Share Screen</span><span class="vv-ctl__b vv-ctl__b--rec"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><circle class="f" cx="12" cy="12" r="3.4"></circle></svg>Record</span><span class="vv-ctl__b"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 14.5c1 1.4 2.2 2 3.5 2s2.5-.6 3.5-2"></path><circle class="f" cx="9" cy="10" r="1"></circle><circle class="f" cx="15" cy="10" r="1"></circle></svg>Reactions</span></div><span class="vv-ctl__leave">Leave</span></div>
+  </div>
+  <div class="vv-zph" data-cfe-media="vip-party-phone" aria-hidden="true">
+    <div class="vv-zph__top"><span class="vv-zph__live">Live</span><span>The VIP Party</span><span class="vv-zph__leave">Leave</span></div>
+    <div class="vv-zph__stage"><img class="vv-zph__host" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/host-action-d95137.jpg" alt=""><span class="vv-zph__self"><img src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/party-face-1-e51c9f.jpg" alt=""></span><span class="vv-tile__tag"><i class="vv-mic"></i>Matthew · Host</span></div>
+    <div class="vv-zph__ctl"><span class="vv-zph__b"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0M12 18v3"></path></svg>Mute</span><span class="vv-zph__b"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="12" height="10" rx="2"></rect><path d="M15 11l6-3v8l-6-3z"></path></svg>Video</span><span class="vv-zph__b vv-zph__b--share"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"></rect><path d="M12 14V8M9 10.5l3-3 3 3M8 21h8"></path></svg>Share</span><span class="vv-zph__b"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"></path><circle cx="17" cy="9" r="2.4"></circle><path d="M16.5 14.2c2.6.4 4.5 2.6 4.5 5.8"></path></svg>People</span><span class="vv-zph__b"><svg viewBox="0 0 24 24" aria-hidden="true"><circle class="f" cx="5" cy="12" r="1.7"></circle><circle class="f" cx="12" cy="12" r="1.7"></circle><circle class="f" cx="19" cy="12" r="1.7"></circle></svg>More</span></div>
+  </div>
+</div></div>
       <div>
         <p class="cl-pill">VIP #2</p>
-        <h2 class="cl-h2 cl-vipb__h">The VIP Party: Your Close, Built With Matthew the Day After</h2>
+        <h2 class="cl-h2 cl-vipb__h">The VIP Party: Your EXACT roadmap to $100K Days</h2>
         <div class="cl-body">
-          <p><em>"I'll understand it on the day… but will I actually be able to put it into MY presentation?"</em></p>
-          <p>The day after the masterclass, everyone with a general ticket is on their own with their notes. As a VIP, you join me for a private <strong>2-hour build session</strong>, where we put the Sniper Close™ into your own presentation together.</p>
-          <p>You bring your offer and your presentation, and we work through your Sniper Close™ Roadmap one step at a time… where your offer goes, how you make the ask and how the yeses come in.</p>
+          <p><em>"I get the close… but how do I fill the room, and what do I actually do first?"</em></p>
+          <p>The day after the masterclass, everyone with a general ticket is on their own with their notes. As a VIP, you join me for a private <strong>2-hour working session</strong>, where we map out your next online event together.</p>
+          <p>We start with the room… who you want in it, where those premium buyers are right now and the conversations that get them into a seat.</p>
+          <p>Then we build your roadmap one step at a time… from the first conversation, to a full room, to your first clients saying yes at your next event.</p>
           <p>You ask your questions live and get real answers about YOUR business, your offer and your price, not someone else's example on a slide.</p>
-          <p>Think of it like backstage at a concert… while the crowd has gone home, <strong>you're in the room with us, building it.</strong></p>
-          <p><strong>You walk out with your close built, not another to-do list.</strong></p>
-          
+          <p>Think of it like backstage at a concert… while the crowd has gone home, <strong>you're in the room with us, mapping it out.</strong></p>
+          <p><strong>You walk out with a plan to fill your room and a clear roadmap to your first clients, not another to-do list.</strong></p>
         </div>
+        <p class="cl-vipb__anchor" data-cfe-optional="vip-value-2"><strong>Value: $497.</strong> Upgrade to VIP today, it's included.</p>
         </div>
     </div>
   </div>
@@ -2786,7 +2851,7 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
         <div class="vv-msg vv-msg--me vv-tail">Stuck on step 2 of my Sniper Close™ Roadmap, is this right?<span class="vv-meta">09:27 <b>✓✓</b></span></div>
         <div class="vv-msg vv-msg--me">Sent you my version 🙏<span class="vv-meta">09:27 <b>✓✓</b></span></div>
         <span class="vv-day">TODAY</span>
-        <div class="vv-msg vv-msg--host vv-tail">Just went through your Sniper Close™ Roadmap. Two tweaks and it's done… swap steps 2 and 3, and tighten the ask at the end. You're closer than you think.<span class="vv-meta">11:25</span></div>
+        <div class="vv-msg vv-msg--host vv-tail">Just went through your Sniper Close™ Roadmap. Two tweaks and it's done… swap steps 2 and 3, and tighten the pitch at the end. You're closer than you think.<span class="vv-meta">11:25</span></div>
         <div class="vv-msg vv-msg--me vv-tail">Done! Running it with my team this week 🙌<span class="vv-meta">11:26 <b>✓✓</b></span></div>
         <div class="vv-msg vv-msg--me">Thank you!!<span class="vv-meta">11:26 <b>✓✓</b></span></div>
         <div class="vv-msg vv-msg--host vv-tail">Love it 👏 Tell me how it goes — ask me anything while you've got me.<span class="vv-meta">11:31</span></div>
@@ -2803,7 +2868,7 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
         <div class="cl-body">
           <p><em>"What happens when I get stuck halfway through on my own?"</em></p>
           <p>This is exactly where most people quietly give up… they hit one question at 9pm, there's nobody to ask, and the whole thing goes back in the drawer for another month.</p>
-          <p>For 3 days straight after the masterclass, while it's all still fresh, you get a private VIP line to me on WhatsApp. Send me your presentation, your offer or the words you're planning to use for your ask, and I'll tell you exactly what to change so you can <strong>close 3–5 high-ticket clients from your next online event</strong>.</p>
+          <p>For 3 days straight after the masterclass, while it's all still fresh, you get a private VIP line to me on WhatsApp. Send me your presentation, your offer or the words you're planning to use for your pitch, and I'll tell you exactly what to change so you can <strong>close 3–5 high-ticket clients from your next online event</strong>.</p>
           <p>It's the same direct access my private clients have, and it's the closest thing to having me sitting right beside you while you build.</p>
           <ul class="cl-list cl-list--tick">
             <li><strong>Answers when you need them:</strong> send a message and get a reply, so one question never stalls your whole week.</li>
@@ -2812,6 +2877,7 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
           </ul>
           <p><strong>For a lot of VIPs, this is the most valuable thing in the whole upgrade.</strong></p>
         </div>
+        <p class="cl-vipb__anchor" data-cfe-optional="vip-value-3"><strong>Value: $297.</strong> Upgrade to VIP today, it's included.</p>
         </div>
     </div>
   </div>
@@ -2820,46 +2886,46 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
 <section class="cl-section" data-cfe="09-vip-workbook">
   <div class="cl-container">
     <div class="cl-vipb cl-vipb--flip">
-      <div class="cl-vipb__img cl-vipb__vis" style="height: 100%"><div class="vv vv--workbook" data-cfe-media="vip-workbook" aria-label="The Secret To Filling The Room With The Right People — the $Million Story™ Builder, built on the $100K Day Engine®">
+      <div class="cl-vipb__img cl-vipb__vis" style="height: 100%"><div class="vv vv--workbook" data-cfe-media="vip-workbook" aria-label="The Secret To Filling The Room With Premium Buyers — the Pixie Dust Chat Method, built on the $100K Day Engine®">
   <div class="vv__art">
     <div class="vv-map"><span class="vv-clip"></span>
-      <img class="vv-map__in" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/system-diagram-2d9292.png" alt="$100K Day Engine®The 3-stage, 9-step systemMatthew Whitephoto
+      <img class="vv-map__in" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/system-diagram-e8ef8d.png" alt="$100K Day Engine®The 3-stage, 9-step systemMatthew Whitephoto
         
         1Offer Matrix™1232Money Magnet™4563Client Flywheel™789" data-cfe-media="system-diagram">
     </div>
     <div class="vv-tool" style="left: 62px; top: 279px; position: absolute">
-      <img class="vv-tool__in" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/event-magnet-tool-130470.png" alt="One-page tool · Step 1 of 9 · $Million Story Builder" data-cfe-media="event-magnet-tool">
+      <img class="vv-tool__in" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/event-magnet-tool-5ad210.png" alt="One-page method · Step 8 of 9 · Pixie Dust Chat Method" data-cfe-media="event-magnet-tool">
     </div>
     <div class="vv-book">
       <div class="vv-tabs"><i>1</i><i>2</i><i>3</i></div>
       <div class="vv-cover">
         <p class="vv-k">The Secret To Filling The Room</p>
-        <div><p class="vv-title" style="font-size: 34px">$Million Story™ Builder</p><p class="vv-sub">Fill-in-the-Blanks Workbook</p></div>
+        <div style="position: relative"><img class="vv-pixie" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/pixie-dust-icon-6bff94.svg" alt="" data-cfe-media="pixie-dust-icon" style="position: absolute; top: .15em; right: 0; width: 3.2em; height: 3.2em; margin: 0; object-fit: contain; background: none; border: 0; box-shadow: none"><p class="vv-title" style="font-size: 34px">Pixie Dust Chat Method</p><p class="vv-sub">One-Page Method + Training</p></div>
         <div class="vv-foot"><p class="vv-by">by Matthew White</p><img class="vv-logo ph" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/logo-91f59b.png" alt="Coach Launch logo" data-cfe-media="logo"></div>
       </div>
     </div>
-    <span class="vv-seal"><b>Templates</b><span>+ worked example inside</span></span>
+    <span class="vv-seal"><b>Training</b><span>+ one-page method inside</span></span>
     <span class="vv-pen"></span>
   </div>
 </div></div>
       <div>
         <p class="cl-pill">VIP #4</p>
-        <h2 class="cl-h2 cl-vipb__h">The Secret To Filling Your Room With Buyers</h2>
+        <h2 class="cl-h2 cl-vipb__h">Get the Unique Chat system that fills events with buyers like clockwork.</h2>
         <div class="cl-body">
-          <p><em>"My close is ready… but will anyone actually listen?"</em></p>
-          <p>The Sniper Close™ gets them to say yes. But your message decides whether the right people are in the room to hear it.</p>
-          <p>Most coaches sound like every other coach in the feed. Cold traffic scrolls straight past, and the few who stop can't tell what they're buying, so they ask for a discount first.</p>
-          <p><strong>The $Million Story™ Builder fixes that before you take the stage.</strong> It's the one-page story system that turns cold strangers into buyers who say "that's me," without competing on price or stacking bonuses.</p>
-          <p>You work left to right and finish it in one sitting:</p>
+          <p style="font-weight: 700"><em>"My close is ready… but who's going to be in the room to hear it?"</em></p>
+          <p>The Sniper Close™ gets them to say yes. But it can only close the people who turn up… and right now your warm crowd has dried up, and ads feel like throwing money into an empty pit.</p>
+          <p>So you post again and hope the right person sees it. Or you get someone talking, and three days and twenty messages later it stalls at "thanks, I'll think about it."</p>
+          <p><strong>The Pixie Dust Chat Method fixes that before you take the stage.</strong> It's the NEW conversations system that turns strangers into paying event buyers and qualified calls, without throwing money into an empty pit.</p>
+          <p>As a VIP you get the one-page method, plus my training on the whole system, so you can map your conversations from first hello to paid seat in one sitting:</p>
           <ul class="cl-list cl-list--tick">
-            <li><strong>The Golden Avatar™:</strong> picture the one person you're talking to, so the right people turn up and the wrong ones filter out.</li>
-            <li><strong>The $Million Promise™:</strong> the one line that makes them stop and know exactly what they're buying.</li>
-            <li><strong>The $Million Moment™:</strong> your story, told so they see themselves in it.</li>
-            <li><strong>The Conversion Filter ★:</strong> four quick tests your promise has to pass before it goes live.</li>
+            <li><strong>Premium buyers coming to you:</strong> your Pixie Value Bomb™ gets the right people starting the conversation, so you never have to chase.</li>
+            <li><strong>Conversations that end in a yes:</strong> no more "thanks, I'll think about it"… they ask you how to get a seat.</li>
+            <li><strong>A full room every time you run an event:</strong> paid seats and qualified calls, without throwing money into an empty pit.</li>
           </ul>
-          <p>Templates are already made, with my finished example beside each step, so you can see what "done" looks like.</p>
-          <p><strong><span>Ticket holders</span> get the close. VIPs get the right people in the room to hear it.</strong></p>
+          
+          <p><strong><span>Ticket holders</span> get the close. VIPs get premium buyers in the room to hear it.</strong></p>
         </div>
+        <p class="cl-vipb__anchor" data-cfe-optional="vip-value-4"><strong>Value: $297.</strong> Upgrade today and it's included.</p>
         </div>
     </div>
   </div>
@@ -2871,7 +2937,7 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
       <div class="cl-vipb__img cl-vipb__vis"><div class="vv vv--vault" data-cfe-media="vip-vault" aria-label="The Recordings Vault — the full recording, the slides and the cheat sheet, yours for life">
   <div class="vv__art">
     <p class="vv-vtitle">The Recordings Vault</p>
-    <span class="vv-forever"><b>For life</b><span>yours to keep</span></span>
+    <span class="vv-forever" style="width: 97px; height: 98px; left: 6px; top: 6px; position: absolute"><b>For life</b><span>yours to keep</span></span>
     <div class="vv-laptop">
       <div class="vv-lscreen">
         <div class="vv-lbar"><span class="vv-lock" aria-hidden="true"></span><b>VIP Vault</b><span class="vv-lpill">Lifetime access</span></div>
@@ -2908,6 +2974,7 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
           </ul>
           <p><strong>Everyone else gets a replay that comes down. VIPs keep it for life.</strong></p>
         </div>
+        <p class="cl-vipb__anchor" data-cfe-optional="vip-value-5"><strong>Value: $197.</strong> Upgrade today and it's included.</p>
         </div>
     </div>
   </div>
@@ -2955,13 +3022,13 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
   </div>
 </div></div>
       <div>
-        <p class="cl-pill">VIP #6 · $997 value</p>
+        <p class="cl-pill">VIP #6</p>
         <h2 class="cl-h2 cl-vipb__h">The Prompt Vault: Your AI Copywriter, Starting With Your Sniper Close™</h2>
         <div class="cl-body">
           <p><em>"I know what I want to say… I just can't get it written."</em></p>
           <p>Hiring a good copywriter for one launch can cost thousands and take weeks, and writing it all yourself usually means staring at a blank screen at midnight, wondering where on earth to start… so most people just never launch.</p>
           <p>A prompt is simply a set of instructions you paste into an AI tool like Claude. Most people type in one line and get generic rubbish back… ours ask you about your offer and your people first, then write in your own voice, using the same structure behind our 127 $100K+ days.</p>
-          <p>And sitting right at the top of the vault is the <strong>Sniper Close™ Prompt</strong>. You paste in your offer and your presentation, and it writes your close with you… where the offer goes, the words for your ask and the answers to the doubts your room is already thinking.</p>
+          <p>And sitting right at the top of the vault is the <strong>Sniper Close™ Prompt</strong>. You paste in your offer and your presentation, and it writes your close with you… where the offer goes, the words for your pitch and the answers to the doubts your room is already thinking.</p>
           <ul class="cl-list cl-list--tick">
             <li><strong>The Sniper Close™ Prompt:</strong> your close, written in your voice and ready to drop into your presentation.</li>
             <li><strong>Your sales page:</strong> the page that sells your offer, written in minutes instead of weeks.</li>
@@ -2970,6 +3037,7 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
           <p>Can you imagine never paying a copywriter again, and having every page, email and ad for your next event written in your voice before lunch? That's what this vault does, and you can use it for every event you ever run.</p>
           <p><strong>On its own, the Prompt Vault is valued at $997… and it's included in your VIP Upgrade.</strong></p>
         </div>
+        <p class="cl-vipb__anchor" data-cfe-optional="vip-value-6"><strong>Value: $997.</strong> Upgrade today and it's included.</p>
         </div>
     </div>
   </div>
@@ -2993,7 +3061,7 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
         <div class="vv-msg vv-msg--me vv-tail">Stuck on step 2 of my Sniper Close™ Roadmap, is this right?<span class="vv-meta">09:27 <b>✓✓</b></span></div>
         <div class="vv-msg vv-msg--me">Sent you my version 🙏<span class="vv-meta">09:27 <b>✓✓</b></span></div>
         <span class="vv-day">TODAY</span>
-        <div class="vv-msg vv-msg--host vv-tail">Just went through your Sniper Close™ Roadmap. Two tweaks and it's done… swap steps 2 and 3, and tighten the ask at the end. You're closer than you think.<span class="vv-meta">11:25</span></div>
+        <div class="vv-msg vv-msg--host vv-tail">Just went through your Sniper Close™ Roadmap. Two tweaks and it's done… swap steps 2 and 3, and tighten the pitch at the end. You're closer than you think.<span class="vv-meta">11:25</span></div>
         <div class="vv-msg vv-msg--me vv-tail">Done! Running it with my team this week 🙌<span class="vv-meta">11:26 <b>✓✓</b></span></div>
         <div class="vv-msg vv-msg--me">Thank you!!<span class="vv-meta">11:26 <b>✓✓</b></span></div>
         <div class="vv-msg vv-msg--host vv-tail">Love it 👏 Tell me how it goes — ask me anything while you've got me.<span class="vv-meta">11:31</span></div>
@@ -3004,44 +3072,43 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
     </div></div>
   </div>
 </div></div>
-    <div class="vv-item vv-item--workbook"><div class="vv vv--workbook" aria-label="The Secret To Filling The Room With The Right People — the $Million Story™ Builder, built on the $100K Day Engine®">
+    <div class="vv-item vv-item--workbook"><div class="vv vv--workbook" aria-label="The Secret To Filling The Room With Premium Buyers — the Pixie Dust Chat Method, built on the $100K Day Engine®">
   <div class="vv__art">
     <div class="vv-map"><span class="vv-clip"></span>
-      <img class="vv-map__in" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/system-diagram-2d9292.png" alt="$100K Day Engine®The 3-stage, 9-step systemMatthew Whitephoto
+      <img class="vv-map__in" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/system-diagram-e8ef8d.png" alt="$100K Day Engine®The 3-stage, 9-step systemMatthew Whitephoto
         
         1Offer Matrix™1232Money Magnet™4563Client Flywheel™789" data-cfe-media="system-diagram">
     </div>
     <div class="vv-tool">
-      <img class="vv-tool__in" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/event-magnet-tool-130470.png" alt="One-page tool · Step 1 of 9 · $Million Story Builder" data-cfe-media="event-magnet-tool">
+      <img class="vv-tool__in" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/event-magnet-tool-5ad210.png" alt="One-page method · Step 8 of 9 · Pixie Dust Chat Method" data-cfe-media="event-magnet-tool">
     </div>
     <div class="vv-book">
       <div class="vv-tabs"><i>1</i><i>2</i><i>3</i></div>
       <div class="vv-cover">
         <p class="vv-k">The Secret To Filling The Room</p>
-        <div><p class="vv-title">$Million Story™ Builder</p><p class="vv-sub">Fill-in-the-Blanks Workbook</p></div>
+        <div style="position: relative"><img class="vv-pixie" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/pixie-dust-icon-6bff94.svg" alt="" data-cfe-media="pixie-dust-icon" style="position: absolute; top: .15em; right: 0; width: 3.2em; height: 3.2em; margin: 0; object-fit: contain; background: none; border: 0; box-shadow: none"><p class="vv-title">Pixie Dust Chat Method</p><p class="vv-sub">One-Page Method + Training</p></div>
         <div class="vv-foot"><p class="vv-by">by Matthew White</p><img class="vv-logo ph" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/logo-91f59b.png" alt="Coach Launch logo" data-cfe-media="logo"></div>
       </div>
     </div>
-    <span class="vv-seal"><b>Templates</b><span>+ worked example inside</span></span>
+    <span class="vv-seal"><b>Training</b><span>+ one-page method inside</span></span>
     <span class="vv-pen"></span>
   </div>
 </div></div>
-    <div class="vv-item vv-item--party"><div class="vv vv--party" aria-label="The VIP Party — live implementation session with Matthew White">
+    <div class="vv-item vv-item--party"><div class="vv vv--party vv--zoom" aria-label="The VIP Party — live implementation session with Matthew White">
   <div class="vv__art">
-    <svg class="vv-confetti" viewBox="0 0 480 360" aria-hidden="true"><g><rect x="22" y="40" width="10" height="4" rx="2" transform="rotate(-25 27 42)"></rect><rect x="455" y="70" width="10" height="4" rx="2" transform="rotate(30 460 72)"></rect><circle cx="60" cy="300" r="3"></circle><circle cx="430" cy="310" r="3.5"></circle><rect x="250" y="18" width="9" height="4" rx="2" transform="rotate(15 254 20)"></rect><circle cx="120" cy="22" r="2.5"></circle><rect x="380" y="26" width="9" height="4" rx="2" transform="rotate(-40 384 28)"></rect><circle cx="470" cy="200" r="2.5"></circle><circle cx="12" cy="180" r="2.5"></circle><rect x="200" y="338" width="10" height="4" rx="2" transform="rotate(20 205 340)"></rect></g></svg>
     <div class="vv-bar"><span class="vv-pill vv-pill--live">Live</span><span class="vv-bar__t">The VIP Party</span><span class="vv-pill vv-pill--paper">2-hour · the day after</span></div>
-    <div class="vv-grid">
-      <div class="vv-tile vv-tile--host">
-        <img class="ph vv-tile__bg" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/vip-party-d95137.jpg" alt="Matthew White hosting the VIP Party" data-cfe-media="host-action" style="width: 167px; height: 226px; top: 0px; object-fit: cover; object-position: 42.1334% 100%; object-view-box: inset(11.5533% 32.6456% 0% 23.7697%); left: 2px">
-        <span class="vv-tile__tag"><i class="vv-mic"></i>Matthew · Host</span>
-        <span class="vv-tile__speaking"></span>
-      </div>
+    <div class="vv-strip">
       <div class="vv-tile"><img class="vv-face ph" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/party-face-1-e51c9f.jpg" alt="VIP" data-cfe-media="party-face-1"><span class="vv-tile__tag">You</span></div>
       <div class="vv-tile"><img class="vv-face ph" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/party-face-2-7fc338.jpg" alt="VIP" data-cfe-media="party-face-2"><span class="vv-tile__tag">VIP</span></div>
       <div class="vv-tile"><img class="vv-face ph" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/party-face-3-bcde5b.jpg" alt="VIP" data-cfe-media="party-face-3"><span class="vv-tile__tag">VIP</span></div>
       <div class="vv-tile"><img class="vv-face ph" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/party-face-4-3ca165.jpg" alt="VIP" data-cfe-media="party-face-4"><span class="vv-tile__tag">VIP</span></div>
     </div>
-    <div class="vv-foot"><span class="vv-foot__k">Build session + live answers</span><span class="vv-foot__dot">·</span><span>Bring your presentation, we build your close together</span></div>
+    <div class="vv-tile vv-tile--host" style="width: 455px; height: 227px">
+        <img class="ph vv-tile__bg" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/host-action-d95137.jpg" alt="Matthew White hosting the VIP Party" data-cfe-media="host-action" style="width: 383px; height: 226px; top: 0px; object-fit: cover; object-position: 0% 100%; object-view-box: inset(11.5533% 0.0423% 0% 0%); left: 2px">
+        <span class="vv-tile__tag"><i class="vv-mic"></i>Matthew · Host</span>
+        <span class="vv-tile__speaking"></span>
+      </div>
+    <div class="vv-ctl" aria-hidden="true"><div class="vv-ctl__g"><span class="vv-ctl__b"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0M12 18v3"></path></svg>Mute</span><span class="vv-ctl__b"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="12" height="10" rx="2"></rect><path d="M15 11l6-3v8l-6-3z"></path></svg>Stop Video</span></div><div class="vv-ctl__g"><span class="vv-ctl__b"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"></path><circle cx="17" cy="9" r="2.4"></circle><path d="M16.5 14.2c2.6.4 4.5 2.6 4.5 5.8"></path></svg>Participants</span><span class="vv-ctl__b"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H10l-5 4v-4H4z"></path></svg>Chat</span><span class="vv-ctl__b vv-ctl__b--share"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"></rect><path d="M12 14V8M9 10.5l3-3 3 3M8 21h8"></path></svg>Share Screen</span><span class="vv-ctl__b vv-ctl__b--rec"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><circle class="f" cx="12" cy="12" r="3.4"></circle></svg>Record</span><span class="vv-ctl__b"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 14.5c1 1.4 2.2 2 3.5 2s2.5-.6 3.5-2"></path><circle class="f" cx="9" cy="10" r="1"></circle><circle class="f" cx="15" cy="10" r="1"></circle></svg>Reactions</span></div><span class="vv-ctl__leave">Leave</span></div>
   </div>
 </div></div>
     <div class="vv-item vv-item--vault"><div class="vv vv--vault" aria-label="The Recordings Vault — the full recording, the slides and the cheat sheet, yours for life">
@@ -3078,7 +3145,7 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
     <span class="vv-cap">Two seats · same room · same plan</span>
   </div>
 </div></div>
-    <span class="vv-pill vv-pill--accent vv-badge">Everything in VIP · $97</span>
+    <span class="vv-pill vv-pill--accent vv-badge">Everything in VIP · $297</span>
   </div>
 </div>
   </div>
@@ -3090,17 +3157,17 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
       <h2 class="cl-h2 cl-h2--center">Here's Everything You Get When You Upgrade to VIP Today</h2>
       <ul class="cl-stack">
         
-        <li>Bring Your +1 — a second VIP Party seat for the person who helps you run your event <span class="cl-stack__value">Included</span></li>
-        <li>The VIP Party — your close built into your presentation with Matthew, live, the day after <span class="cl-stack__value">Included</span></li>
-        <li>Matthew &amp; Sarah In Your Pocket — 3 days of direct answers on WhatsApp <span class="cl-stack__value">Included</span></li>
-        <li>The Secret To Filling The Room With The Right People — the $Million Story™ Builder, with templates and Matthew's finished example <span class="cl-stack__value">Included</span></li>
-        <li>The Recordings Vault — the full recording, slides and cheat sheet, yours for life <span class="cl-stack__value">Included</span></li>
+        <li>Bring Your +1 — a second VIP Party seat for the person who helps you run your event <span class="cl-stack__value">$197 value</span></li>
+        <li>The VIP Party — your roadmap to a full room and your first clients, built with Matthew, live, the day after <span class="cl-stack__value">$497 value</span></li>
+        <li>Matthew &amp; Sarah In Your Pocket — 3 days of direct answers on WhatsApp <span class="cl-stack__value">$297 value</span></li>
+        <li>The Secret To Filling The Room With Premium Buyers — the Pixie Dust Chat Method, the one-page conversations system, with Matthew's training <span class="cl-stack__value">$297 value</span></li>
+        <li>The Recordings Vault — the full recording, slides and cheat sheet, yours for life <span class="cl-stack__value">$197 value</span></li>
         <li>The Prompt Vault — the Sniper Close™ Prompt, plus your sales page, email and ad prompts <span class="cl-stack__value">$997 value</span></li>
-        <li class="cl-stack__total">Total value <span class="cl-stack__value"><span class="cl-strike">$1,494</span> &nbsp;Today just $97</span></li>
+        <li class="cl-stack__total">Total value <span class="cl-stack__value"><span class="cl-strike">$2,482</span> &nbsp;Today just $297</span></li>
       </ul>
       <div class="cl-yesno">
-        <a class="cl-cta" href="#checkout"><span class="cl-cta__main">Upgrade To VIP — Just $97!</span><span class="cl-cta__sub">One click — no card details needed</span></a>
-        <a class="cl-decline" href="3b-seat-confirmed.html">No thanks, Matthew. I'll skip the VIP Party, the WhatsApp access, the $Million Story™ Builder, the recordings, the Prompt Vault and a seat for my +1, and build my close on my own. Take me to my confirmation.</a>
+        <a class="cl-cta" href="#checkout"><span class="cl-cta__main">Upgrade To VIP — Just $297!</span><span class="cl-cta__sub">One click — no card details needed</span></a>
+        <a class="cl-decline" href="3b-seat-confirmed.html">No thanks, Matthew. I'll skip the VIP Party, the WhatsApp access, the Pixie Dust Chat Method, the recordings, the Prompt Vault and a seat for my +1, and map out my next event on my own. Take me to my confirmation.</a>
       </div>
     </div>
   </div>
@@ -3115,7 +3182,7 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
       <p>The people who go ALL IN are the ones who get results, and it's not because they're smarter or more talented than anyone else… it's because they made a decision.</p>
       <p>Upgrading isn't really about the extras. It's about telling yourself, <strong>"I'm serious. I'm not just here to learn this… I'm here to DO it."</strong></p>
       <p>The masterclass shows you what to do, and the VIP Upgrade gives you everything you need to actually do it, with us right beside you.</p>
-      <p>For $97, a tiny fraction of what one high-ticket client pays you, this could be the decision that turns your next online event into the one that finally closes.</p>
+      <p>For $297, a tiny fraction of what one high-ticket client pays you, this could be the decision that turns your next online event into the one that finally closes.</p>
     </div>
   </div>
 </section>
@@ -3124,10 +3191,10 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
   <div class="cl-container cl-container--letter cl-letter">
     <h2 class="cl-h3 cl-letter__h">One more thing…</h2>
     <p>During the masterclass we'll lay out the whole Sniper Close™ live. VIPs go one step further and <strong>build it into their own presentation alongside us</strong> the day after, while everyone else takes notes and tries to piece it together on their own.</p>
-<p>Can you imagine walking into your next online event knowing exactly where your offer goes, exactly what you'll say when you make the ask and exactly how the yeses come in? That's what this upgrade is for, and it's one simple decision for $97.</p>
+<p>Can you imagine walking into your next online event knowing exactly where your offer goes, exactly what you'll say when you make the pitch and exactly how the yeses come in? That's what this upgrade is for, and it's one simple decision for $297.</p>
     <p class="cl-finalclose__sign">I'll see you at the VIP session,<br><strong>Matthew White</strong></p>
     <div class="cl-yesno">
-      <a class="cl-cta" href="#checkout"><span class="cl-cta__main">Upgrade To VIP — Just $97!</span><span class="cl-cta__sub">One click — no card details needed</span></a>
+      <a class="cl-cta" href="#checkout"><span class="cl-cta__main">Upgrade To VIP — Just $297!</span><span class="cl-cta__sub">One click — no card details needed</span></a>
       <a class="cl-decline" href="3b-seat-confirmed.html">No thanks — take me to my confirmation.</a>
     </div>
   </div>
@@ -3135,12 +3202,12 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
 
 <section class="cl-section cl-section--panel" id="checkout" data-cfe="14-checkout">
   <div class="cl-container cl-container--narrow">
-    <h2 class="cl-h2 cl-h2--center">Get Your Close Built With Us Today for Just $97!</h2>
+    <h2 class="cl-h2 cl-h2--center">Get Your Close Built With Us Today for Just $297!</h2>
     <div class="cl-center"></div>
     
     <p class="cl-center cl-vip__secure"><span aria-hidden="true">🔒</span> One-click upgrade · nothing to fill in</p>
-    <div class="v3-oneclick" data-cfe-media="vip-upsell-block"><a class="cl-cta" href="#"><span class="cl-cta__main">Upgrade To VIP — Just $97!</span><span class="cl-cta__sub">One click · charged to the card you just used</span></a><small>AI Studio one-click upsell block goes here · Yes / No thanks</small></div>
-    <p class="cl-fine cl-center">One-time payment of $97. You keep the VIP bonuses for life.</p>
+    <div class="v3-oneclick" data-cfe-media="vip-upsell-block"><a class="cl-cta" href="#"><span class="cl-cta__main">Upgrade To VIP — Just $297!</span><span class="cl-cta__sub">One click · charged to the card you just used</span></a><small>AI Studio one-click upsell block goes here · Yes / No thanks</small></div>
+    <p class="cl-fine cl-center">One-time payment of $297. You keep the VIP bonuses for life.</p>
     <p class="cl-center"><a class="cl-decline" href="3b-seat-confirmed.html">No thanks — take me to my confirmation.</a></p>
   </div>
 </section>
@@ -3148,7 +3215,7 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
 
 <footer class="cl-footer" data-cfe="15-footer">
   <div class="cl-container">
-    <nav aria-label="Footer"><a href="https://coachlaunch.com">Home</a><span class="cl-footer__sep">|</span><a href="https://coachlaunch.com/terms">Terms</a><span class="cl-footer__sep">|</span><a href="https://coachlaunch.com/privacy">Privacy</a><span class="cl-footer__sep">|</span><a href="https://coachlaunch.com/disclaimer">Disclaimer</a><span class="cl-footer__sep">|</span><a href="mailto:contact@e.coachlaunch.com">Contact</a></nav>
+    <img src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/logo-white-1e3d66.png" alt="Coach Launch" data-cfe-media="logo-white" style="display: block; height: 30px; width: auto; margin: 0 auto 18px; box-shadow: none; border-radius: 0"><nav aria-label="Footer"><a href="https://coachlaunch.com">Home</a><span class="cl-footer__sep">|</span><a href="https://coachlaunch.com/terms">Terms</a><span class="cl-footer__sep">|</span><a href="https://coachlaunch.com/privacy">Privacy</a><span class="cl-footer__sep">|</span><a href="https://coachlaunch.com/disclaimer">Disclaimer</a><span class="cl-footer__sep">|</span><a href="mailto:contact@e.coachlaunch.com">Contact</a></nav>
     <p class="cl-footer__legal"><strong>Disclaimers:</strong> This site is not part of the Facebook website or Meta Platforms, Inc., and is not endorsed by Meta in any way. We use Google remarketing pixels and cookies to show our ads to people who have visited this site; opt out in Google's Ads Settings.<span data-cfe-optional="results-disclaimer"> These members showed up, did the work, and followed the system. Your results will depend on your effort and how consistently you implement.</span> · © 2026 Coach Launch — All rights reserved.</p>
   </div>
 </footer>
