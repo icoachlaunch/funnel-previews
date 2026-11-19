@@ -2665,9 +2665,40 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
 
 /* Phone: 18px minimum text, same rule as desktop (board) */
 @media (max-width: 760px) {
-  .cfe-page :is(p, li, summary, span, strong, em, b, a, td, label, small, mark, u, figcaption, blockquote):not(.vv *):not(.v3-deliv *):not(.v3-vc *):not(.spai *):not(.rs-card *):not(.rs-wrap *):not(.v3-hero *):not([data-cfe-media] *):not(.v3-pill):not(.v3-pill *):not(.v3-prog *):not(.v3-warn):not(.v3-warn *) { font-size: max(18px, 1em); }
+  .cfe-page :is(p, li, summary, span, strong, em, b, a, td, label, small, mark, u, figcaption, blockquote):not(.vv *):not(.v3-ps *):not(.v3-deliv *):not(.v3-vc *):not(.spai *):not(.rs-card *):not(.rs-wrap *):not(.v3-hero *):not([data-cfe-media] *):not(.v3-pill):not(.v3-pill *):not(.v3-prog *):not(.v3-warn):not(.v3-warn *) { font-size: max(18px, 1em); }
   .cfe-page .cl-pill { letter-spacing: .06em; }
   .cfe-page .v3-access { width: auto !important; max-width: 100% !important; margin-left: 0 !important; transform: none !important; white-space: normal !important; }
+}
+
+/* ═══ CFE V3 · live-page responsive fixes (2026-11-19) — appended to every exported page by from-dc.py, after the
+   board's own CSS. The board is laid out at desktop width and carries hand-set pixel sizes and positions; these
+   rules undo them below desktop so nothing spills off a tablet or phone. No colour, no copy. ═══════════════════ */
+
+/* Tablet + phone: hand-set widths wrap; the solution stack (roadmap image + script card + slides card) stacks */
+@media (max-width: 1199px) {
+  .cfe-page .cl-eyebrow, .cfe-page .cl-lede, .cfe-page .cl-pullquote { width: auto !important; height: auto !important; }
+  .cfe-page .cl-eyebrow, .cfe-page .cl-lede { max-width: 100% !important; }
+  .cfe-page .rs-wrap { display: block !important; max-width: 100% !important; }
+  .cfe-page .rs-wrap > .cl-solution__img { display: block; width: 100% !important; max-width: 769px !important; height: auto !important; aspect-ratio: auto !important; }
+  .cfe-page .rs-card { display: flex; flex-direction: column; position: relative !important; left: auto !important; right: auto !important; top: auto !important; height: auto !important; width: min(340px, 100%) !important; margin: 28px auto 0 !important; transform: none !important; }
+  .cfe-page .rs-paper--back { display: contents !important; }
+  .cfe-page .rs-slide--b1, .cfe-page .rs-slide--b2 { display: none !important; }
+  .cfe-page .rs-card .rs-cap { order: 9; align-self: center; margin: 16px 0 0 !important; }
+}
+
+/* Phone: the two VIP passes fit the screen · footer logo centred · an odd last AI-tool logo sits in the middle */
+@media (max-width: 760px) {
+  .cfe-page .cl-vipb__vis > .vv--plusone { width: 100% !important; max-width: 453px; height: auto !important; aspect-ratio: 453 / 604; margin-inline: auto; }
+  .cfe-page .cl-footer .cl-logo-img { display: block; margin-left: auto; margin-right: auto; }
+  .cfe-page .ai-grid > .ai-cell:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+
+/* Small phone: the four close cards go one per row, icon on the right, so the "Close sequence" pill fits */
+@media (max-width: 560px) {
+  .cfe-page .spai-cgrid { grid-template-columns: minmax(0, 1fr); }
+  .cfe-page .spai-close { position: relative; padding-right: 96px; }
+  .cfe-page .spai-cph { white-space: nowrap; font-size: 12px !important; }
+  .cfe-page .spai-close > .spai-ci { position: absolute; right: 18px; top: 50%; margin: -32px 0 0; }
 }
 
 </style>
