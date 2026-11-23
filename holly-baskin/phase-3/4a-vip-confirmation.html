@@ -2475,6 +2475,10 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
   .cfe-page .rs-paper--back { display: contents !important; }
   .cfe-page .rs-slide--b1, .cfe-page .rs-slide--b2 { display: none !important; }
   .cfe-page .rs-card .rs-cap { order: 9; align-self: center; margin: 16px 0 0 !important; }
+  /* 2026-11-23 (Mother Malia): host-card quote given a pixel width on the board; a heading forced onto one line
+     (nowrap + max-content, centred with left:50%/translateX) — both spilled off the phone */
+  .cfe-page .cl-hostcard__quote { width: auto !important; max-width: 100% !important; }
+  .cfe-page .cl-h2[style*="nowrap"] { white-space: normal !important; width: auto !important; max-width: 100% !important; left: auto !important; transform: none !important; text-align: center; }
 }
 
 /* Phone: the two VIP passes fit the screen · footer logo centred · an odd last AI-tool logo sits in the middle */
@@ -2482,6 +2486,9 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
   .cfe-page .cl-vipb__vis > .vv--plusone { width: 100% !important; max-width: 453px; height: auto !important; aspect-ratio: 453 / 604; margin-inline: auto; }
   .cfe-page .cl-footer .cl-logo-img { display: block; margin-left: auto; margin-right: auto; }
   .cfe-page .ai-grid > .ai-cell:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  /* 2026-11-23 (Tina Schaaf): a VIP block image with a pixel width (12-philosophy, 445px) stretched the one-column
+     1fr track past the phone screen — the track may shrink below its content */
+  .cfe-page .cl-vipb { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* Small phone: the four close cards go one per row, icon on the right, so the "Close sequence" pill fits */
@@ -2516,7 +2523,7 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
       <div class="cl-commbox__text">
         <p class="cl-commbox__k">Important</p>
         <h2 class="cl-commbox__h">Join the free First $5K Client Engine™ Community</h2>
-        <a class="cl-cta" href="#facebook-group" target="_blank" rel="noopener"><span class="cl-cta__main">Join The Community</span><span class="cl-cta__sub">Free · Facebook group</span></a>
+        <a class="cl-cta" href="CLIENT-TO-SUPPLY-COMMUNITY_URL" target="_blank" rel="noopener"><span class="cl-cta__main">Join The Community</span><span class="cl-cta__sub">Free · Facebook group</span></a>
       </div>
       <img class="cl-imgslot cl-commbox__img" src="https://icoachlaunch.github.io/funnel-previews/holly-baskin/phase-3/img/community-banner-d1ce8e.jpg" alt="community banner" data-cfe-media="community-banner" style="padding: 0; border: 0; width: 100%; object-fit: cover; display: block">
     </div>
@@ -2552,7 +2559,7 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
               <p class="cl-herotimer__label">Live masterclass starts in</p>
               <div class="cl-countdown cl-countdown--hero" data-deadline="2026-12-31T12:00:00-08:00"><span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="d">00</span><span class="cl-countdown__label">days</span></span><span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="h">00</span><span class="cl-countdown__label">hrs</span></span><span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="m">00</span><span class="cl-countdown__label">min</span></span><span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="s">00</span><span class="cl-countdown__label">sec</span></span></div>
             </div>
-            <a class="cl-cta" href="#add-to-calendar" target="_blank" rel="noopener"><span class="cl-cta__main">Add To Calendar</span><span class="cl-cta__sub">Thu 31 Dec @ 12pm PT</span></a>
+            <a class="cl-cta" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=The+First+%245K+Client+Engine%E2%84%A2+Masterclass&amp;dates=20261231T200000Z%2F20270101T000000Z&amp;details=Live+on+Zoom+with+Holly+Podva-Baskin.%0AJoin+here%3A+https%3A%2F%2Fbaskin-funnel-clone.vibepreview.app%2Fevent&amp;location=https%3A%2F%2Fbaskin-funnel-clone.vibepreview.app%2Fevent" target="_blank" rel="noopener"><span class="cl-cta__main">Add To Calendar</span><span class="cl-cta__sub">Thu 31 Dec @ 12pm PT</span></a>
           </div>
         </li>
         <li class="cl-ns__step">
@@ -2584,7 +2591,7 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
             <h3 class="cl-ns__h"><svg class="cl-ns__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3.2"/><circle cx="17" cy="9.5" r="2.6"/><path d="M3 19.5c.6-3.4 3-5.2 6-5.2s5.4 1.8 6 5.2M14.5 15c2.6-.4 5.6.8 6.5 4.5"/></svg>Join the free First $5K Client Engine™ Community</h3>
             <p class="cl-ns__p">Meet the other experienced professionals joining you for the masterclass. Say hello, share what you do in one line (or try to!) and get ready to build alongside them.</p>
             <p class="cl-ns__p">Once you <strong>(1)</strong> join the Facebook group, <strong>(2)</strong> watch the videos in the "Guides" tab, and <strong>(3) introduce yourself and share why you've chosen to join!</strong></p>
-            <a class="cl-cta" href="#facebook-group" target="_blank" rel="noopener"><span class="cl-cta__main">Join The Free Community</span><span class="cl-cta__sub">Free · Facebook group</span></a>
+            <a class="cl-cta" href="CLIENT-TO-SUPPLY-COMMUNITY_URL" target="_blank" rel="noopener"><span class="cl-cta__main">Join The Free Community</span><span class="cl-cta__sub">Free · Facebook group</span></a>
           </div>
         </li>
       </ol>
