@@ -2252,6 +2252,10 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
   .cfe-page .rs-paper--back { display: contents !important; }
   .cfe-page .rs-slide--b1, .cfe-page .rs-slide--b2 { display: none !important; }
   .cfe-page .rs-card .rs-cap { order: 9; align-self: center; margin: 16px 0 0 !important; }
+  /* 2026-11-23 (Mother Malia): host-card quote given a pixel width on the board; a heading forced onto one line
+     (nowrap + max-content, centred with left:50%/translateX) — both spilled off the phone */
+  .cfe-page .cl-hostcard__quote { width: auto !important; max-width: 100% !important; }
+  .cfe-page .cl-h2[style*="nowrap"] { white-space: normal !important; width: auto !important; max-width: 100% !important; left: auto !important; transform: none !important; text-align: center; }
 }
 
 /* Phone: the two VIP passes fit the screen · footer logo centred · an odd last AI-tool logo sits in the middle */
@@ -2259,6 +2263,9 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
   .cfe-page .cl-vipb__vis > .vv--plusone { width: 100% !important; max-width: 453px; height: auto !important; aspect-ratio: 453 / 604; margin-inline: auto; }
   .cfe-page .cl-footer .cl-logo-img { display: block; margin-left: auto; margin-right: auto; }
   .cfe-page .ai-grid > .ai-cell:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  /* 2026-11-23 (Tina Schaaf): a VIP block image with a pixel width (12-philosophy, 445px) stretched the one-column
+     1fr track past the phone screen — the track may shrink below its content */
+  .cfe-page .cl-vipb { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* Small phone: the four close cards go one per row, icon on the right, so the "Close sequence" pill fits */
@@ -2361,10 +2368,10 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
       <div class="cl-imgslot" style="width: 100%">Member testimonial video · interview with captions · 16:9</div>
     </div>
     <div class="cl-grid cl-grid--2 cl-member__quotes">
-      <figure class="cl-quote cl-testimonial"><p class="cl-quote__text">“<strong>$25K in 8 weeks</strong> — while still validating the offer, and the first $100K Day in 157 days.”</p><figcaption class="cl-quote__by"><img class="cl-avatar" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/testimonial-1-531b92.jpg" alt="Photo of Guy Bouchard" data-cfe-media="member-1"><span><span class="cl-quote__name">Guy Bouchard</span><br>Coach helping real estate investors with multifamily apartments</span></figcaption><p class="cl-stars" aria-label="5 out of 5 stars">★★★★★</p></figure>
-      <figure class="cl-quote cl-testimonial"><p class="cl-quote__text">“<strong>$75K from 10 people + $144K in upsells</strong> — from a single event.”</p><figcaption class="cl-quote__by"><img class="cl-avatar" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/testimonial-5-2d375a.png" alt="Photo of Melanie Warner" data-cfe-media="member-2"><span><span class="cl-quote__name">Melanie Warner</span><br>Coach helping people make money from books</span></figcaption><p class="cl-stars" aria-label="5 out of 5 stars">★★★★★</p></figure>
-      <figure class="cl-quote cl-testimonial"><p class="cl-quote__text">“<strong>$100K net income in a year</strong> — now on track for $250K.”</p><figcaption class="cl-quote__by"><img class="cl-avatar" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/testimonial-4-b33b60.png" alt="Photo of Melanie Levasiure" data-cfe-media="member-3"><span><span class="cl-quote__name">Melanie Levasiure</span><br>Coach helping mums build online businesses</span></figcaption><p class="cl-stars" aria-label="5 out of 5 stars">★★★★★</p></figure>
-      <figure class="cl-quote cl-testimonial"><p class="cl-quote__text">“<strong>$50K closed in 3 months</strong> — from a single research call, not even a masterclass.”</p><figcaption class="cl-quote__by"><img class="cl-avatar" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/testimonial-3-4e76b5.jpg" alt="Photo of Angie Roars" data-cfe-media="member-4"><span><span class="cl-quote__name">Angie Roars</span><br>Coach helping people stand out from the crowd</span></figcaption><p class="cl-stars" aria-label="5 out of 5 stars">★★★★★</p></figure>
+      <figure class="cl-quote cl-testimonial"><p class="cl-quote__text">“<strong>$25K in 8 weeks</strong> — while still validating the offer, and the first $100K Day in 157 days.”</p><figcaption class="cl-quote__by"><img class="cl-avatar" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/photo-of-guy-bouchard-531b92.jpg" alt="Photo of Guy Bouchard" data-cfe-media="member-1"><span><span class="cl-quote__name">Guy Bouchard</span><br>Coach helping real estate investors with multifamily apartments</span></figcaption><p class="cl-stars" aria-label="5 out of 5 stars">★★★★★</p></figure>
+      <figure class="cl-quote cl-testimonial"><p class="cl-quote__text">“<strong>$75K from 10 people + $144K in upsells</strong> — from a single event.”</p><figcaption class="cl-quote__by"><img class="cl-avatar" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/photo-of-melanie-warner-2d375a.png" alt="Photo of Melanie Warner" data-cfe-media="member-2"><span><span class="cl-quote__name">Melanie Warner</span><br>Coach helping people make money from books</span></figcaption><p class="cl-stars" aria-label="5 out of 5 stars">★★★★★</p></figure>
+      <figure class="cl-quote cl-testimonial"><p class="cl-quote__text">“<strong>$100K net income in a year</strong> — now on track for $250K.”</p><figcaption class="cl-quote__by"><img class="cl-avatar" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/member-3-b33b60.png" alt="Photo of Melanie Levasiure" data-cfe-media="member-3"><span><span class="cl-quote__name">Melanie Levasiure</span><br>Coach helping mums build online businesses</span></figcaption><p class="cl-stars" aria-label="5 out of 5 stars">★★★★★</p></figure>
+      <figure class="cl-quote cl-testimonial"><p class="cl-quote__text">“<strong>$50K closed in 3 months</strong> — from a single research call, not even a masterclass.”</p><figcaption class="cl-quote__by"><img class="cl-avatar" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/photo-of-angie-roars-4e76b5.jpg" alt="Photo of Angie Roars" data-cfe-media="member-4"><span><span class="cl-quote__name">Angie Roars</span><br>Coach helping people stand out from the crowd</span></figcaption><p class="cl-stars" aria-label="5 out of 5 stars">★★★★★</p></figure>
     </div>
     <div class="cl-cta-stack">
       <a class="cl-cta" href="#join"><span class="cl-cta__main">Yes! I Want To Join</span><span class="cl-cta__sub">From $697/month · choose monthly or yearly</span></a>

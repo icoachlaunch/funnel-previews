@@ -2827,6 +2827,10 @@ img.v3-deliv__sys { padding: 0; object-fit: contain; background: #fff; }
   .cfe-page .rs-paper--back { display: contents !important; }
   .cfe-page .rs-slide--b1, .cfe-page .rs-slide--b2 { display: none !important; }
   .cfe-page .rs-card .rs-cap { order: 9; align-self: center; margin: 16px 0 0 !important; }
+  /* 2026-11-23 (Mother Malia): host-card quote given a pixel width on the board; a heading forced onto one line
+     (nowrap + max-content, centred with left:50%/translateX) — both spilled off the phone */
+  .cfe-page .cl-hostcard__quote { width: auto !important; max-width: 100% !important; }
+  .cfe-page .cl-h2[style*="nowrap"] { white-space: normal !important; width: auto !important; max-width: 100% !important; left: auto !important; transform: none !important; text-align: center; }
 }
 
 /* Phone: the two VIP passes fit the screen · footer logo centred · an odd last AI-tool logo sits in the middle */
@@ -2834,6 +2838,9 @@ img.v3-deliv__sys { padding: 0; object-fit: contain; background: #fff; }
   .cfe-page .cl-vipb__vis > .vv--plusone { width: 100% !important; max-width: 453px; height: auto !important; aspect-ratio: 453 / 604; margin-inline: auto; }
   .cfe-page .cl-footer .cl-logo-img { display: block; margin-left: auto; margin-right: auto; }
   .cfe-page .ai-grid > .ai-cell:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  /* 2026-11-23 (Tina Schaaf): a VIP block image with a pixel width (12-philosophy, 445px) stretched the one-column
+     1fr track past the phone screen — the track may shrink below its content */
+  .cfe-page .cl-vipb { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* Small phone: the four close cards go one per row, icon on the right, so the "Close sequence" pill fits */
@@ -2992,17 +2999,17 @@ img.v3-deliv__sys { padding: 0; object-fit: contain; background: #fff; }
     <div class="cl-grid cl-grid--3">
       <figure class="cl-quote cl-testimonial">
         <p class="cl-quote__text">“$75K from 10 people + $144K in upsells — from a single event”</p>
-        <figcaption class="cl-quote__by"><img class="cl-avatar" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/testimonial-5-2d375a.png" alt="Photo of Melanie Warner" loading="lazy"><span><span class="cl-quote__name">Melanie Warner</span><br>Coach helping people make money from books</span></figcaption>
+        <figcaption class="cl-quote__by"><img class="cl-avatar" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/photo-of-melanie-warner-2d375a.png" alt="Photo of Melanie Warner" loading="lazy"><span><span class="cl-quote__name">Melanie Warner</span><br>Coach helping people make money from books</span></figcaption>
         <p class="cl-stars" aria-label="5 out of 5 stars">★★★★★</p>
       </figure>
       <figure class="cl-quote cl-testimonial">
         <p class="cl-quote__text">“$28,000 closed in 7 weeks — projecting $680K by year end”</p>
-        <figcaption class="cl-quote__by"><img class="cl-avatar" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/testimonial-2-338c3d.png" alt="Photo of Vincent Holthouse" loading="lazy"><span><span class="cl-quote__name">Vincent Holthouse</span><br>Coach helping real estate investors with cashflow properties</span></figcaption>
+        <figcaption class="cl-quote__by"><img class="cl-avatar" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/photo-of-vincent-holthouse-338c3d.png" alt="Photo of Vincent Holthouse" loading="lazy"><span><span class="cl-quote__name">Vincent Holthouse</span><br>Coach helping real estate investors with cashflow properties</span></figcaption>
         <p class="cl-stars" aria-label="5 out of 5 stars">★★★★★</p>
       </figure>
       <figure class="cl-quote cl-testimonial">
         <p class="cl-quote__text">“$25K in 8 weeks — while still validating the offer and first $100K Day in 157 days”</p>
-        <figcaption class="cl-quote__by"><img class="cl-avatar" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/testimonial-1-531b92.jpg" alt="Photo of Guy Bouchard" loading="lazy"><span><span class="cl-quote__name">Guy Bouchard</span><br>Coach helping real estate investors with multifamily apartments</span></figcaption>
+        <figcaption class="cl-quote__by"><img class="cl-avatar" src="https://icoachlaunch.github.io/funnel-previews/coach-launch/phase-3/img/photo-of-guy-bouchard-531b92.jpg" alt="Photo of Guy Bouchard" loading="lazy"><span><span class="cl-quote__name">Guy Bouchard</span><br>Coach helping real estate investors with multifamily apartments</span></figcaption>
         <p class="cl-stars" aria-label="5 out of 5 stars">★★★★★</p>
       </figure>
     </div>

@@ -2684,6 +2684,10 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
   .cfe-page .rs-paper--back { display: contents !important; }
   .cfe-page .rs-slide--b1, .cfe-page .rs-slide--b2 { display: none !important; }
   .cfe-page .rs-card .rs-cap { order: 9; align-self: center; margin: 16px 0 0 !important; }
+  /* 2026-11-23 (Mother Malia): host-card quote given a pixel width on the board; a heading forced onto one line
+     (nowrap + max-content, centred with left:50%/translateX) — both spilled off the phone */
+  .cfe-page .cl-hostcard__quote { width: auto !important; max-width: 100% !important; }
+  .cfe-page .cl-h2[style*="nowrap"] { white-space: normal !important; width: auto !important; max-width: 100% !important; left: auto !important; transform: none !important; text-align: center; }
 }
 
 /* Phone: the two VIP passes fit the screen · footer logo centred · an odd last AI-tool logo sits in the middle */
@@ -2691,6 +2695,9 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
   .cfe-page .cl-vipb__vis > .vv--plusone { width: 100% !important; max-width: 453px; height: auto !important; aspect-ratio: 453 / 604; margin-inline: auto; }
   .cfe-page .cl-footer .cl-logo-img { display: block; margin-left: auto; margin-right: auto; }
   .cfe-page .ai-grid > .ai-cell:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  /* 2026-11-23 (Tina Schaaf): a VIP block image with a pixel width (12-philosophy, 445px) stretched the one-column
+     1fr track past the phone screen — the track may shrink below its content */
+  .cfe-page .cl-vipb { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* Small phone: the four close cards go one per row, icon on the right, so the "Close sequence" pill fits */
@@ -2760,9 +2767,9 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
             <p class="cl-ns__p">This is a live masterclass, so put it in your calendar right now and set an alarm, because this is where you see <strong>the whole Sniper Close™ System laid out live</strong>, ready for your next online event.</p>
             <div class="cl-herotimer cl-ns__timer">
               <p class="cl-herotimer__label">Live masterclass starts in</p>
-              <div class="cl-countdown cl-countdown--hero" data-deadline="2026-11-12T12:00:00-08:00"><span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="d">00</span><span class="cl-countdown__label">days</span></span><span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="h">00</span><span class="cl-countdown__label">hrs</span></span><span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="m">00</span><span class="cl-countdown__label">min</span></span><span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="s">00</span><span class="cl-countdown__label">sec</span></span></div>
+              <div class="cl-countdown cl-countdown--hero" data-deadline="2026-12-03T12:00:00-08:00"><span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="d">00</span><span class="cl-countdown__label">days</span></span><span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="h">00</span><span class="cl-countdown__label">hrs</span></span><span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="m">00</span><span class="cl-countdown__label">min</span></span><span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="s">00</span><span class="cl-countdown__label">sec</span></span></div>
             </div>
-            <a class="cl-cta" href="CLIENT-TO-SUPPLY-CALENDAR_URL" target="_blank" rel="noopener"><span class="cl-cta__main">Add To Calendar</span><span class="cl-cta__sub">Thu 12 Nov @ 12pm PT / 3pm ET</span></a>
+            <a class="cl-cta" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=The+Sniper+Close%E2%84%A2+Masterclass&amp;dates=20261203T200000Z%2F20261204T000000Z&amp;details=Live+on+Zoom+with+Matthew+White.%0AJoin+here%3A+https%3A%2F%2Fsniper.coachlaunch.com%2Fjoin-live&amp;location=https%3A%2F%2Fsniper.coachlaunch.com%2Fjoin-live" target="_blank" rel="noopener"><span class="cl-cta__main">Add To Calendar</span><span class="cl-cta__sub">Thu 3 Dec @ 12pm PT / 3pm ET</span></a>
           </div>
         </li>
         <li class="cl-ns__step" data-cfe="ns-community">
@@ -2799,8 +2806,7 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
           <li><strong>The VIP Party:</strong> your roadmap to a full room and your first clients, built with Matthew, live, the day after</li>
           <li><strong>Matthew In Your Pocket:</strong> 3 days of direct answers on WhatsApp, so you're never stuck</li>
           <li><strong>The Pixie Dust Chat Method + the Recordings Vault:</strong> the conversations that fill your room, plus the recording, slides and cheat sheet for life</li>
-          <li><strong>The Prompt Vault ($997 value):</strong> the Sniper Close™ Prompt, plus your sales page, email and ad prompts</li>
-        </ul>
+</ul>
         <a class="cl-cta" href="2-vip-upsell.html#checkout"><span class="cl-cta__main">Upgrade To VIP Now!</span><span class="cl-cta__sub">$297 · one-time</span></a>
       </div>
     </div>

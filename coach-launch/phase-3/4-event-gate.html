@@ -2243,6 +2243,10 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
   .cfe-page .rs-paper--back { display: contents !important; }
   .cfe-page .rs-slide--b1, .cfe-page .rs-slide--b2 { display: none !important; }
   .cfe-page .rs-card .rs-cap { order: 9; align-self: center; margin: 16px 0 0 !important; }
+  /* 2026-11-23 (Mother Malia): host-card quote given a pixel width on the board; a heading forced onto one line
+     (nowrap + max-content, centred with left:50%/translateX) — both spilled off the phone */
+  .cfe-page .cl-hostcard__quote { width: auto !important; max-width: 100% !important; }
+  .cfe-page .cl-h2[style*="nowrap"] { white-space: normal !important; width: auto !important; max-width: 100% !important; left: auto !important; transform: none !important; text-align: center; }
 }
 
 /* Phone: the two VIP passes fit the screen · footer logo centred · an odd last AI-tool logo sits in the middle */
@@ -2250,6 +2254,9 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
   .cfe-page .cl-vipb__vis > .vv--plusone { width: 100% !important; max-width: 453px; height: auto !important; aspect-ratio: 453 / 604; margin-inline: auto; }
   .cfe-page .cl-footer .cl-logo-img { display: block; margin-left: auto; margin-right: auto; }
   .cfe-page .ai-grid > .ai-cell:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  /* 2026-11-23 (Tina Schaaf): a VIP block image with a pixel width (12-philosophy, 445px) stretched the one-column
+     1fr track past the phone screen — the track may shrink below its content */
+  .cfe-page .cl-vipb { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* Small phone: the four close cards go one per row, icon on the right, so the "Close sequence" pill fits */
@@ -2290,12 +2297,12 @@ span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--pap
 
       <div class="cl-herotimer">
         <p class="cl-herotimer__label">Live masterclass starts in</p>
-        <div class="cl-countdown cl-countdown--hero" data-deadline="2026-11-12T12:00:00-08:00"><span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="d">00</span><span class="cl-countdown__label">days</span></span><span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="h">00</span><span class="cl-countdown__label">hrs</span></span><span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="m">00</span><span class="cl-countdown__label">min</span></span><span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="s">00</span><span class="cl-countdown__label">sec</span></span></div>
+        <div class="cl-countdown cl-countdown--hero" data-deadline="2026-12-03T12:00:00-08:00"><span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="d">00</span><span class="cl-countdown__label">days</span></span><span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="h">00</span><span class="cl-countdown__label">hrs</span></span><span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="m">00</span><span class="cl-countdown__label">min</span></span><span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="s">00</span><span class="cl-countdown__label">sec</span></span></div>
       </div>
 
       <div class="cl-gatecard__when">
         <p class="cl-gatecard__whenk">This event is scheduled for:</p>
-        <p class="cl-gatecard__whenv">Thu 12 Nov @ 12pm PT / 3pm ET</p>
+        <p class="cl-gatecard__whenv">Thu 3 Dec @ 12pm PT / 3pm ET</p>
         <p class="cl-gatecard__early">Join 5 mins prior to event starting</p>
       </div>
 
